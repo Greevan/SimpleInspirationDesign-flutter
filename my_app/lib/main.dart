@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(244, 243, 233, 1),
+      backgroundColor: const Color.fromRGBO(234, 233, 233, 1),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                     height: 5,
                   ),
                   const Text(
-                    'Inspiration',
+                    'Creativity',
                     style: TextStyle(fontSize: 40, color: Colors.black87),
                   ),
                   const SizedBox(
@@ -79,13 +79,33 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 5,
             ),
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Hello World',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  //const SizedBox(width: 2,),
+                  const Text(
+                    'Promo Today',
+                    style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        promocard('assets/images/imageTwo.jpg'),
+                        promocard('assets/images/imageThree.jpg'),
+                        promocard('assets/images/imageTwo.jpg'),
+                        promocard('assets/images/imageThree.jpg'),
+                        promocard('assets/images/imageTwo.jpg'),
+                        promocard('assets/images/imageThree.jpg'),
+                        
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -95,4 +115,35 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget promocard(image) {
+  return AspectRatio(
+    aspectRatio: 2.6 / 3,
+    child: Container(
+      margin: const EdgeInsets.only(right: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.orange,
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: LinearGradient(
+            begin: Alignment.bottomRight,
+            stops: const [0, 1],
+            colors: [
+              Colors.black.withOpacity(.8),
+              Colors.black.withOpacity(.1)
+            ],
+          ),
+        ),
+        
+      ),
+    ),
+  );
 }
