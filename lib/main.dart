@@ -87,7 +87,10 @@ class _HomePageState extends State<HomePage> {
                   //const SizedBox(width: 2,),
                   const Text(
                     'Promo Today',
-                    style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     height: 5,
@@ -103,13 +106,46 @@ class _HomePageState extends State<HomePage> {
                         promocard('assets/images/imageThree.jpg'),
                         promocard('assets/images/imageTwo.jpg'),
                         promocard('assets/images/imageThree.jpg'),
-                        
                       ],
                     ),
                   ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Container(
+              height: 160,
+              margin: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(20),
+                image: const DecorationImage(
+                    image: AssetImage('assets/images/mainImage.jpg'),
+                    fit: BoxFit.cover),
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    stops: const [0, 1],
+                    colors: [
+                      Colors.black.withOpacity(.8),
+                      Colors.black.withOpacity(.1)
+                    ],
+                  ),
+                ),
+                child: const Align(
+                  alignment: Alignment.bottomLeft,
+                  child:  Padding(
+                    padding:  EdgeInsets.all(15.0),
+                    child:  Text('Best Designs',style: TextStyle(fontSize: 18,color: Colors.white)),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -142,7 +178,6 @@ Widget promocard(image) {
             ],
           ),
         ),
-        
       ),
     ),
   );

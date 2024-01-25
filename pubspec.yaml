@@ -63,6 +63,7 @@ flutter:
     #- assets/images/imageOne.jpg
     - assets/images/imageTwo.jpg
     - assets/images/imageThree.jpg
+    - assets/images/mainImage.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
